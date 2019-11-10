@@ -284,7 +284,8 @@ export default {
         return;
       }
 
-      this.totalMilliseconds -= this.interval;
+      // this.totalMilliseconds -= this.interval;
+      this.totalMilliseconds = this.endTime - this.now();
 
       if (this.emitEvents && this.totalMilliseconds > 0) {
         /**

@@ -5,7 +5,7 @@
  * Copyright 2018-present Chen Fengyuan
  * Released under the MIT license
  *
- * Date: 2019-09-14T04:14:37.456Z
+ * Date: 2019-11-10T16:10:07.303Z
  */
 
 'use strict';
@@ -296,9 +296,10 @@ var index = {
     progress: function progress() {
       if (!this.counting) {
         return;
-      }
+      } // this.totalMilliseconds -= this.interval;
 
-      this.totalMilliseconds -= this.interval;
+
+      this.totalMilliseconds = this.endTime - this.now();
 
       if (this.emitEvents && this.totalMilliseconds > 0) {
         /**
